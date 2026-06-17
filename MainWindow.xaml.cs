@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,7 +7,6 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Windows.Media.Control;
-using System.Diagnostics;
 
 namespace SpotifyOverlay
 {
@@ -43,6 +43,26 @@ namespace SpotifyOverlay
                     s.SourceAppUserModelId.Contains("Spotify"));
         }
 
+        private async Task UpdatePlayButton(
+            GlobalSystemMediaTransportControlsSession spotifySession)
+        {
+            var playback = spotifySession.GetPlaybackInfo();
+
+            if (playback.PlaybackStatus ==
+                GlobalSystemMediaTransportControlsSessionPlaybackStatus.Playing)
+            {
+                PlayPauseImage.Source =
+                    new BitmapImage(
+                        new Uri("pack://application:,,,/Assets/Pause.jpg"));
+            }
+            else
+            {
+                PlayPauseImage.Source =
+                    new BitmapImage(
+                        new Uri("pack://application:,,,/Assets/Play.jpg"));
+            }
+        }
+
         private async Task UpdateSpotifyInfo()
         {
             try
@@ -69,6 +89,8 @@ namespace SpotifyOverlay
                     string.IsNullOrWhiteSpace(media.Artist)
                     ? "Unknown Artist"
                     : media.Artist;
+
+                await UpdatePlayButton(spotifySession);
 
                 var timeline =
                     spotifySession.GetTimelineProperties();
@@ -119,6 +141,10 @@ namespace SpotifyOverlay
             if (spotifySession != null)
             {
                 await spotifySession.TryTogglePlayPauseAsync();
+
+                await Task.Delay(250);
+
+                await UpdateSpotifyInfo();
             }
         }
 
@@ -181,22 +207,22 @@ namespace SpotifyOverlay
             }
         }
 
-        private void Github_Click(
-            object sender,
-            RoutedEventArgs e)
-                {
-                    Process.Start(new ProcessStartInfo
-                    {
-                        FileName = "https://github.com/ThatOneGuy-67",
-                        UseShellExecute = true
-                    });
-                }
-
         private void Close_Click(
             object sender,
             RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Github_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/ThatOneGuy-67",
+                UseShellExecute = true
+            });
         }
     }
 }

@@ -13,6 +13,8 @@
 	  <None Remove="Assets\Pause.jpg" />
 	  <None Remove="Assets\Play.jpg" />
 	  <None Remove="Assets\Prev.jpg" />
+	  <None Remove="SpotifyOverlay.ico" />
+	  <None Remove="SpotifyOverlay.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -20,6 +22,8 @@
 	  <Resource Include="Assets\Pause.jpg" />
 	  <Resource Include="Assets\Play.jpg" />
 	  <Resource Include="Assets\Prev.jpg" />
+	  <Resource Include="SpotifyOverlay.ico" />
+	  <Resource Include="SpotifyOverlay.jpg" />
 	</ItemGroup>
 
 </Project>

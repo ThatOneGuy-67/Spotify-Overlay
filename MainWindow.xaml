@@ -6,7 +6,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
-        Topmost="True">
+        Topmost="True" Icon="/SpotifyOverlay.jpg" ResizeMode="NoResize" Title="SpotifyOverlay" RenderTransformOrigin="0,0">
 
     <Border Background="#DD121212"
             CornerRadius="20"
@@ -75,7 +75,8 @@
                             Background="Transparent"
                             BorderThickness="0">
 
-                        <Image Source="Assets/Play.jpg"/>
+                        <Image x:Name="PlayPauseImage"
+                           Source="Assets/Play.jpg"/>
                     </Button>
 
                     <Button Width="40"
