@@ -34,22 +34,6 @@ A modern Spotify desktop overlay built with **C#**, **WPF**, and the **Windows M
 * WPF (.NET 8)
 * Windows Media Session API
 * Visual Studio 2022
-
-## Folder Structure
-
-```text
-SpotifyOverlay
-│
-├─ Assets
-│  ├─ Play.jpg
-│  ├─ Pause.jpg
-│  ├─ Prev.jpg
-│  └─ Forw.jpg
-│
-├─ MainWindow.xaml
-├─ MainWindow.xaml.cs
-├─ App.xaml
-└─ README.md
 ```
 
 ## Installation
@@ -129,10 +113,6 @@ opens the project creator's GitHub profile.
 * Compact Mode
 * Auto Hide While Paused
 * Discord Rich Presence Integration
-
-## Screenshots
-
-Add screenshots of the overlay here.
 
 ## License
 
