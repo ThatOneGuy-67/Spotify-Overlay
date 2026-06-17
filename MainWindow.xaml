@@ -1,0 +1,122 @@
+﻿<Window x:Class="SpotifyOverlay.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="500"
+        Height="150"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Topmost="True">
+
+    <Border Background="#DD121212"
+            CornerRadius="20"
+            Padding="15">
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Album Art -->
+            <Border Grid.Column="0"
+                    Width="75"
+                    Height="75"
+                    CornerRadius="12"
+                    ClipToBounds="True"
+                    VerticalAlignment="Top">
+
+                <Image x:Name="AlbumArt"
+                       Stretch="UniformToFill"/>
+            </Border>
+
+            <!-- Song Info -->
+            <StackPanel Grid.Column="1"
+                        Margin="15,0,0,0">
+
+                <TextBlock x:Name="SongTitle"
+                           Text="Loading..."
+                           Foreground="White"
+                           FontSize="18"
+                           FontWeight="SemiBold"
+                           TextTrimming="CharacterEllipsis"/>
+
+                <TextBlock x:Name="ArtistName"
+                           Text="Loading..."
+                           Foreground="#B3B3B3"
+                           FontSize="13"
+                           Margin="0,2,0,0"
+                           TextTrimming="CharacterEllipsis"/>
+
+                <ProgressBar x:Name="SongProgress"
+                             Height="6"
+                             Margin="0,12,0,0"
+                             Maximum="100"
+                             Value="0"/>
+
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,15,0,0">
+
+                    <Button Width="40"
+                            Height="40"
+                            Click="Prev_Click"
+                            Background="Transparent"
+                            BorderThickness="0">
+
+                        <Image Source="Assets/Prev.jpg"/>
+                    </Button>
+
+                    <Button Width="40"
+                            Height="40"
+                            Margin="8,0"
+                            Click="PlayPause_Click"
+                            Background="Transparent"
+                            BorderThickness="0">
+
+                        <Image Source="Assets/Play.jpg"/>
+                    </Button>
+
+                    <Button Width="40"
+                            Height="40"
+                            Click="Next_Click"
+                            Background="Transparent"
+                            BorderThickness="0">
+
+                        <Image Source="Assets/Forw.jpg"/>
+                    </Button>
+
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Close Button -->
+            <Button Grid.Column="2"
+                    Width="24"
+                    Height="24"
+                    Content="✕"
+                    Click="Close_Click"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    VerticalAlignment="Top"/>
+
+            <TextBlock Grid.ColumnSpan="3"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"
+               Margin="0,0,0,3"
+               FontSize="15"
+               Foreground="#555555">
+
+                <Hyperlink Click="Github_Click">
+                    Made by ThatOneGuy
+                </Hyperlink>
+
+            </TextBlock>
+
+            
+
+        </Grid>
+    </Border>
+</Window>

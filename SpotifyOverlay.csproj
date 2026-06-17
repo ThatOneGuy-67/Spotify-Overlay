@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Assets\Forw.jpg" />
+	  <None Remove="Assets\Pause.jpg" />
+	  <None Remove="Assets\Play.jpg" />
+	  <None Remove="Assets\Prev.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Assets\Forw.jpg" />
+	  <Resource Include="Assets\Pause.jpg" />
+	  <Resource Include="Assets\Play.jpg" />
+	  <Resource Include="Assets\Prev.jpg" />
+	</ItemGroup>
+
+</Project>
