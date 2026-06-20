@@ -65,7 +65,7 @@
                             Background="Transparent"
                             BorderThickness="0">
 
-                        <Image Source="Assets/Prev.jpg"/>
+                        <Image Source="Assets/Previous.png"/>
                     </Button>
 
                     <Button Width="40"
@@ -76,7 +76,7 @@
                             BorderThickness="0">
 
                         <Image x:Name="PlayPauseImage"
-                           Source="Assets/Play.jpg"/>
+                           Source="Assets/Play.png"/>
                     </Button>
 
                     <Button Width="40"
@@ -85,7 +85,7 @@
                             Background="Transparent"
                             BorderThickness="0">
 
-                        <Image Source="Assets/Forw.jpg"/>
+                        <Image Source="Assets/Next.png"/>
                     </Button>
 
                 </StackPanel>
